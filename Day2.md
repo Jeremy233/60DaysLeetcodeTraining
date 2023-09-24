@@ -8,6 +8,11 @@ https://programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5
 https://www.bilibili.com/video/BV1tZ4y1q7XE/?t=1&spm_id_from=333.1007.seo_video.first&vd_source=fb9e07202b23bd78e8ec7259de6f00bb
 
 
+
+
+
+https://programmercarl.com/%E6%95%B0%E7%BB%84%E6%80%BB%E7%BB%93%E7%AF%87.html#%E6%95%B0%E7%BB%84%E7%9A%84%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE
+
 ## 977 Squares of a Sorted Array
 
 *First thought is to use brute force:*
@@ -75,4 +80,6 @@ class Solution:
 However, this code only passed 12/21 test cases. So check the link above. 
 
 **Still, we use two pointers method, or in this problem, called slide window**
+
+#### Slide window
 
