@@ -1,4 +1,4 @@
-# Day1 | 704 Binary Search，27 Remove Element
+# Day1 | Array 1 | 704 Binary Search，27 Remove Element
 
 ## Today's reading list
 https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html
@@ -90,10 +90,8 @@ Time complexity is O(n)
 
 Space complexity is O(1)
 
-<!-- Add more notes here tomorrow -->
-
 ## Conclusion
-1. Leanred how to use two pointers to solve the problems. 
+1. Leanred how to use two pointers to solve the problems
 2. Learned the essenstials of array
 3. Reviewed the binary search algorithm
 4. Total learning time: 3 hours

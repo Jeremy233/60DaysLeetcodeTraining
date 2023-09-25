@@ -1,4 +1,4 @@
-# Day2 | 977 Squares of a Sorted Array, 209 Minimum Size Subarray Sum, 59 Spiral Matrix II
+# Day2 | Array 2 | 977 Squares of a Sorted Array, 209 Minimum Size Subarray Sum, 59 Spiral Matrix II
 
 ## Today's reading list
 https://programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE
@@ -7,9 +7,7 @@ https://programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5
 
 https://www.bilibili.com/video/BV1tZ4y1q7XE/?t=1&spm_id_from=333.1007.seo_video.first&vd_source=fb9e07202b23bd78e8ec7259de6f00bb
 
-
-
-
+https://programmercarl.com/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.html
 
 https://programmercarl.com/%E6%95%B0%E7%BB%84%E6%80%BB%E7%BB%93%E7%AF%87.html#%E6%95%B0%E7%BB%84%E7%9A%84%E7%BB%8F%E5%85%B8%E9%A2%98%E7%9B%AE
 
@@ -83,3 +81,62 @@ However, this code only passed 12/21 test cases. So check the link above.
 
 #### Slide window
 
+```python
+class Solution:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        left, right = 0, 0
+        l = len(nums)
+        min_len = float('inf')
+        current_sum = 0
+        while right < l:
+            current_sum += nums[right]
+            while current_sum >= target:
+                min_len = min(min_len, right - left + 1)
+                current_sum -= nums[left]
+                left += 1
+            right += 1
+        if min_len != float('inf'):
+            return min_len
+        else:
+            return 0
+```
+
+So in my solution, the if should be changed to while. 
+
+## 59 Spiral Matrix II
+
+Don't have any idea about this problem, so check the link above. 
+
+This problem is still binary search, but it's a little bit different from the previous one. 
+
+```python
+class Solution:
+    def generateMatrix(self, n: int) -> List[List[int]]:
+        nums = [[0] * n for _ in range(n)]
+        startx, starty = 0, 0
+        loop, mid = n // 2, n // 2
+        count = 1
+        for offset in range(1, loop + 1):
+            for i in range(starty, n - offset):
+                nums[startx][i] = count
+                count += 1
+            for i in range(startx, n - offset):
+                nums[i][n - offset] = count
+                count += 1
+            for i in range(n - offset, starty, -1):
+                nums[n - offset][i] = count
+                count += 1
+            for i in range(n - offset, startx, -1):
+                nums[i][starty] = count
+                count += 1
+            startx += 1
+            starty += 1
+        if (n % 2 != 0):
+            nums[mid][mid] = count;
+        return nums
+```
+Here is the solution
+
+## Conclusion
+1. Getting familiar with the two pointers method
+2. Total learning time: 3 hours
